@@ -41,11 +41,11 @@ void setup() {
   showIdle();
 }
 void loop() {
-  espSerial.listen(); // Bắt đầu nghe ESP32
+  espSerial.listen(); 
   delay(30); 
   if (espSerial.available() > 0) {
     char cmd = espSerial.read();
-    Serial.print("Nhan duoc tu ESP32: "); Serial.println(cmd); // In ra để debug
+    Serial.print("Nhan duoc tu ESP32: "); Serial.println(cmd);
     if (cmd == 'O') openDoor("LENH TU WEB");
   }
   fingerSerial.listen();
@@ -107,3 +107,4 @@ void beep(int times, int duration) {
     digitalWrite(BUZZER_PIN, LOW); if (times > 1) delay(100);
   }
 }
+
